@@ -24,10 +24,7 @@ Both modes work recursively, operate on **files only**, and support a **dry run*
 
 2. Download this repository into a location of your choosing
 
-3. For windows add the optional wrapper to call the command from anywhere by running the command from the file-name-replace directory
-
-@echo off
-python "%~dp0fileNameReplace.py" %*
+3. For windows add the optional cmd wrapper to call the command from anywhere by running the command from the file-name-replace directory
 
 Make sure to add the folder to your Path variable so cmd/powershell/ect can pick up the command.
 
