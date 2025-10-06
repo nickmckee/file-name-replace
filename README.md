@@ -9,8 +9,8 @@ Overview
 --------
 1. **replace** — literal substring replacement in file names.  
 2. **iterate** — replace everything **before a pivot** with a formatted string using iterators:
-   - `%j` = folder index (per parent folder, sorted by path)
-   - `%i` = file index (per folder, sorted by file name)
+   - `%j%` = folder index (per parent folder, sorted by path)
+   - `%i%` = file index (per folder, sorted by file name)
 
 Both modes work recursively, operate on **files only**, and support a **dry run**.
 
@@ -57,7 +57,7 @@ fileNameReplace replace " - Copy" "" --dir "P:\Downloads"
 
 *********************************************************
 
-fileNameReplace iterate --pivot "-" --phrase "SEASON_%i%_EPISODE_%j%" [--pad 2] [--dir PATH] [--dry-run] [--skip names]
+fileNameReplace iterate --pivot "-" --phrase "SEASON_%j%_EPISODE_%i%" [--pad 2] [--dir PATH] [--dry-run] [--skip names]
 
 --pivot – literal text to split the name; everything before the first occurrence is replaced
 --phrase – your label template with %i% and/or %j% placeholders
@@ -68,7 +68,7 @@ fileNameReplace iterate --pivot "-" --phrase "SEASON_%i%_EPISODE_%j%" [--pad 2] 
 
 Exmaples:
 
-fileNameReplace iterate --pivot "-" --phrase "s%i%e%j%" --pad 2 --dir "P:\Shows" --dry-run
+fileNameReplace iterate --pivot "-" --phrase "s%j%e%i%" --pad 2 --dir "P:\Shows" --dry-run
 
 BlahBlahBlah - SomethingSomething -> s01e01 - SomethingSomething
 
